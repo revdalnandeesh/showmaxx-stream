@@ -1,7 +1,7 @@
 [build]
-builder = "NIXPACKS"
-buildCommand = "cd backend && npm install"
-startCommand = "cd backend && npm start"
+builder = "DOCKERFILE"
+dockerfilePath = "backend/Dockerfile"
+dockerContext = "backend"
 
 [deploy]
 healthcheckPath = "/api/health"
