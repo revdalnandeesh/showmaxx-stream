@@ -1,21 +1,10 @@
 [build]
 builder = "NIXPACKS"
+buildCommand = "cd backend && npm install"
+startCommand = "cd backend && npm start"
 
 [deploy]
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
-
-[[services]]
-name = "backend"
-
-[services.sources]
-path = "/backend"
-
-[services.build]
-builder = "NIXPACKS"
-
-[services.deploy]
-healthcheckPath = "/api/health"
-port = 5000
