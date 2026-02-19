@@ -19,7 +19,12 @@ initDatabase().catch(console.error);
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5173", "https://showmaxx-j3g9.vercel.app", "https://*.netlify.app"],
+  origin: [
+    "http://localhost:3000", 
+    "http://localhost:5173", 
+    "https://showmaxx-j3g9.vercel.app", 
+    /\.netlify\.app$/
+  ],
   credentials: true
 }));
 
