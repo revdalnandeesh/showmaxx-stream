@@ -17,6 +17,8 @@ const createPool = () => {
     reconnect: true,
     ssl: process.env.DB_SSL === 'require' ? {
       rejectUnauthorized: false
+    } : process.env.RAILWAY_ENVIRONMENT ? {
+      rejectUnauthorized: false
     } : false
   };
 
